@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details</title>
+    <link href="index.css" rel="stylesheet"/>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function Student(){
+            
+            
+            let students=[{
+                
+                name: "Alexa",
+                age: 10,
+                marks: 35
+            },{
+                name: "siri",
+                age: 15,
+                marks: 45
+            }
+            ,{
+                name: "Google",
+                age: 20,
+                marks: 50
+            }
+            ];
+            return(
+                <>
+                <h1>Student Details</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>NAME</th>
+                            <th>AGE</th>
+                            <th>MARKS</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                    {students.map((student,index) => (
+                        <tr key={index}>
+                            <td>{student.name}</td>
+                            <td>{student.age}</td>
+                            <td>{student.marks}</td>
+                            </tr>
+                        )
+                    )}
+                    </tbody>
+                    </table>
+                    </>
+                )}
+                
+        function CarsPage(){
+            let cars=[
+             {
+            name:"BMW",
+             average:10,
+                 img:"https://blog.logomaster.ai/hs-fs/hubfs/bmw-logo-1963.jpg?width=672&height=454&name=bmw-logo-1963.jpg"
+                        },
+                        {
+                 name:"Tata",
+                 average:20,
+                 img:"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Tata_logo.svg/837px-Tata_logo.svg.png"
+              },
+            {        name:"Mercedes",  
+                  average:5,
+       img:"https://cdn.vectorcom/i/500p/mercedes-benz-black-sile-icon-logo-vector-537jpg"
+                        }
+                    ];
+    return(
+        <>
+        <h1>Cars Details</h1>
+        <table className="tab">
+            <thead>
+                <tr>
+                    <th>image</th>
+                    <th>average</th>
+                    <th>Name</th>
+                    </tr>
+                    </thead>
+                    
+            {cars.map((car,index)=>(
+                <tr key={index}>
+                <td><img src={car.img}/> </td>
+                <td>{car.name}</td>
+                <td>{car.average}</td>
+                </tr>
+                ))}
+                </table>
+                 </>
+            )
+            }
+                function App(){
+                    let loggedIn= true;
+                   let firstName="Alexa"
+                   let lastName="Diaz"
+                    // ternary operator for return two return value
+                    return (
+                        <>
+                        <h1>Hello {loggedIn? lastName || firstName :"User" }! </h1>
+                        {loggedIn && <p>"Welcome to Portal"</p>} 
+                        </>
+                )}
+        //          let showCars=false
+                                    
+        //         if(showCars){
+        //         return <CarsPage/>
+        //          }else{
+        //         return(
+        //          <>
+                                    
+        //         <Student />
+        //         </>
+                                    
+        //     )}
+        //  }
+            const rootElement= ReactDOM.createRoot(document.getElementById("root"));
+            rootElement.render(<App/>)
+    </script>
+</body>
+</html>
+
+
